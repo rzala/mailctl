@@ -312,6 +312,7 @@ generateAuthPage env serv email_ noHint = do
         [ ("client_id", serviceFieldLookup ss serv client_id),
           ("redirect_uri", serviceFieldLookup ss serv redirect_uri),
           ("response_type", Just "code"),
+          ("prompt", Just "consent"),
           ("scope", serviceFieldLookup ss serv auth_scope),
           ("login_hint", Just hint)
           -- ,("prompt", Just "consent")
